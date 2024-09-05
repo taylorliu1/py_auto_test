@@ -1,0 +1,5 @@
+node,user,password,vdbench,job,anchor,depth,width,files,size,openflags,operation,fileio,rdpct,xfersize,fileselect,threads,elapsed,interval
+node1,root,#1Danger0us,/root/vdbench/vdbench50407/vdbench,4k,/mnt/test1,2,8,20,1m,o_direct,read,random,50,4k,random,24,72h,5
+node2,root,#1Danger0us,/root/vdbench/vdbench50407/vdbench,64k,/mnt/test2,2,8,20,1m,o_direct,read,random,50,64k,random,24,72h,5
+node3,root,#1Danger0us,/root/vdbench/vdbench50407/vdbench,8k,/mnt/test3,2,8,20,1m,o_direct,read,random,50,8k,random,24,72h,5
+node4,root,#1Danger0us,/root/vdbench/vdbench50407/vdbench,128k,/mnt/test4,2,8,20,1m,o_direct,read,random,50,128k,random,24,72h,5

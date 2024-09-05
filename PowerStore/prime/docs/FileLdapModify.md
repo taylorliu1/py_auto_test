@@ -1,0 +1,25 @@
+# FileLdapModify
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**authentication_type** | [**FileLDAPAuthenticationTypeEnum**](FileLDAPAuthenticationTypeEnum.md) |  | [optional] 
+**base_dn** | **str** | Name of the LDAP base DN.  Base Distinguished Name (BDN) of the root of the LDAP directory tree. The appliance uses the DN to bind to the LDAP service and locate in the LDAP directory tree to begin a search for information.   The base DN can be expressed as a fully-qualified domain name or in X.509 format by using the attribute dc&#x3D;. For example, if the fully-qualified domain name is mycompany.com, the base DN is expressed as dc&#x3D;mycompany,dc&#x3D;com. | [optional] 
+**addresses** | **list[str]** | The list of LDAP server IP addresses. The addresses may be IPv4 or IPv6. | [optional] 
+**add_addresses** | **list[str]** | IP addresses to add to the current server IP addresses list. The addresses may be IPv4 or IPv6. Error occurs if an IP address already exists in the addresses list. Cannot be combined with addresses. | [optional] 
+**remove_addresses** | **list[str]** | IP addresses to remove from the current server IP addresses list. The addresses may be IPv4 or IPv6. Error occurs if an IP address does not exist in the addresses_list. Cannot be combined with addresses. | [optional] 
+**port_number** | **int** | The TCP/IP port used by the NAS Server to connect to the LDAP servers. | [optional] 
+**protocol** | [**FileLDAPProtocolEnum**](FileLDAPProtocolEnum.md) |  | [optional] 
+**is_verify_server_certificate** | **bool** | Indicates whether Certification Authority certificate is used to verify the LDAP server certificate for secure SSL connections. Values are:  * true - verifies LDAP server&#39;s certificate.  * false - doesn&#39;t verify LDAP server&#39;s certificate.  | [optional] 
+**profile_dn** | **str** | For an iPlanet LDAP server, specifies the DN of the entry with the configuration profile. | [optional] 
+**bind_dn** | **str** | Bind Distinguished Name (DN) to be used when binding. | [optional] 
+**bind_password** | **str** | The associated password to be used when binding to the server. | [optional] 
+**is_smb_account_used** | **bool** | Indicates whether SMB authentication is used to authenticate to the LDAP server. Values are:     * true - Indicates that the SMB settings are used for Kerberos authentication.     * false - Indicates that Kerberos uses its own settings.  | [optional] 
+**principal** | **str** | Specifies the principal name for Kerberos authentication. | [optional] 
+**realm** | **str** | Specifies the realm name for Kerberos authentication. | [optional] 
+**password** | **str** | The associated password for Kerberos authentication. | [optional] 
+**is_destination_override_enabled** | **bool** | In order to modify any properties of this resource when the associated NAS server is a replication destination, the is_destination_override_enabled flag must be set to true. When true these properties may be modified: addresses Values are:   true - Enable locally set properties. Source property changes will propagate to the source_parameters of the resource.   false - Reset the properties to the ones from the source. Source property changes will propagate directly to this resource.  Was added in version 3.0.0.0. | [optional] [default to False]
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

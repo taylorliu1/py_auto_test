@@ -1,0 +1,7 @@
+db_1:
+  db_host: "10.226.68.67"
+  db_user: "root"
+  db_password: "123456"
+  db_name: "powerstore"
+  db_charset: "utf8"
+  db_port: "3306"

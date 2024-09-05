@@ -1,0 +1,12 @@
+from base
+COPY . /code/
+WORKDIR /code
+RUN apt-get update
+RUN apt install -y openssh-client
+RUN apt install -y curl
+RUN apt install -y zip
+RUN pip3.8 install kafka-python
+RUN pip3.8 install pypsrp
+RUN zip -vr /code/kafka_agent.zip /code/utils/kafka/kafka_agent/
+ENV PYTHONPATH=/code:/code/PowerFlex:/code/PowerFlex/NAS:/code/PowerStore:/code/PowerStore/prime:$PYTHONPATH
+

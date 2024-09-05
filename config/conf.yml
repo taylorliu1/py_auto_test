@@ -1,0 +1,30 @@
+PowerStore:
+  name: "apm3627"
+  log_level: "debug"
+  log_extension: ".log"
+  array:
+    url: "10.226.46.250"
+    user: "admin"
+    pwd: "Password123!"
+  NAS:
+    nasserverip: "172.16.34.32,172.16.34.33,172.16.34.34,172.16.34.35"
+    migrateip: "172.100.10.34,172.100.10.32,172.100.10.33"
+    bgjobip: "172.100.41.2"
+    fsnum: 2
+    size: 256
+  volume:
+    num: 2
+    size: 100000
+
+  esxi_hosts:
+    - 10.226.69.132
+    - 10.226.69.203
+    - 10.226.69.204
+    - 10.226.69.206
+  vdbench_vm:
+    enable: false
+    Linux:
+      - 192.168.41.27
+      - 192.168.41.28
+      - 192.168.41.29
+      - 192.168.41.30

@@ -1,0 +1,36 @@
+FROM ubuntu:18.04
+USER root
+RUN  apt-get update -y
+RUN apt install -y sudo
+RUN apt install -y vim
+RUN apt install -y software-properties-common
+RUN add-apt-repository ppa:deadsnakes/ppa
+RUN apt install -y python3.8 python3.8-dev python3.8-distutils python3.8-venv
+RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.6 1
+RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.8 2
+RUN python --version
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y mysql-server
+RUN apt -y upgrade
+RUN apt dist-upgrade
+#RUN apt install python3-pip -y
+RUN apt -y install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget iputils-ping net-tools 
+#RUN apt-get -y install python3.8-distutils 3.8
+RUN wget -O /tmp/get-pip.py https://bootstrap.pypa.io/get-pip.py
+RUN python3.8 /tmp/get-pip.py
+RUN apt install python3-pip -y
+RUN pip3 install --upgrade pip
+
+#RUN sudo apt install -y --reinstall python3-pip
+#RUN sudo ln -sf /usr/bin/pip3 /usr/local/bin/pip3
+RUN pip3.8 --version
+ENV MYSQL_ALLOW_EMPTY_PASSWORD yes
+COPY setup.sh /mysql/setup.sh
+COPY schema.sql /mysql/schema.sql
+COPY privileges.sql /mysql/privileges.sql
+CMD ["sh", "/mysql/setup.sh"]
+ENV PYTHONPATH=/code:/code/PowerStore:/code/PowerStore/prime:$PYTHONPATH
+RUN mkdir /code
+COPY requirements.txt /code/
+WORKDIR /code
+RUN pip3.8 install -r requirements.txt
+

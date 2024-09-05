@@ -1,0 +1,61 @@
+{
+    "vsphere": {
+        "vcenter": "10.226.68.95",
+        "user": "administrator@vsphere.local",
+        "password": "Password123!",
+        "insecure": "true",
+        "datacenter": "FileDatacenter",
+        "respool": "VAAI",
+        "datastore":"",
+        "guestcredential": "root:Admin@123"
+    },
+    "vm": {
+        "os": "TWin10",
+        "winbase": "TWin10",
+        "cenbase": "TCentOS",
+        "nameprefix": "TWin10",
+        "num": 10,
+        "user": "rke"
+    },
+    "ip": {
+        "ens192": {
+            "range": "172.16.98.200-172.16.98.201",
+            "gateway": "172.16.20.180",
+            "usage": "public",
+            "net": "NVMeTCP-SAN-A",
+            "mask": "255.255.248.0"
+        },
+        "ens224": {
+            "range": "172.16.97.2-172.16.97.101",
+            "pool": [
+                "172.16.93.0/24",
+                "172.100.51.0/24",
+                "172.100.52.0/24",
+                "172.100.53.0/24",
+                "172.100.54.0/24",
+                "172.100.55.0/24",
+                "172.100.56.0/24",
+                "172.100.57.0/24"
+            ],
+            "gateway": "172.16.20.180",
+            "usage": "internal",
+            "net": "25g_1",
+            "mask": "255.255.0.0"
+        },
+        "ens256": {
+            "pool": [
+                "172.16.20.21/24",
+                "172.16.20.22/24",
+                "172.16.20.23/24",
+                "172.16.20.24/24",
+                "172.16.20.25/24",
+                "172.16.20.26/24",
+                "172.16.20.27/24",
+                "172.16.20.28/24"
+            ],
+            "gateway": "172.16.20.1",
+            "usage": "storage"
+        }
+    }
+}
+

@@ -1,0 +1,12 @@
+{
+    "file": {
+        "num": 3,
+        "retry": 0,
+        "duration": 60,
+        "depth": 3,
+        "size": 100000,
+        "os_type": "Linux"
+    }
+
+}
+
